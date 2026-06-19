@@ -113,6 +113,16 @@ body{background:var(--bg);color:var(--text);font-family:'Crimson Pro',Georgia,se
 .nav-btn:disabled{opacity:.2;cursor:default}
 .nav-progress{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.2em;color:var(--text-faint);white-space:nowrap}
 
+/* ── SYMBOL TABLE ── */
+.formula-symbols{margin-top:20px;border-top:1px solid rgba(210,175,100,0.15);padding-top:16px;text-align:left}
+.formula-symbols-label{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:12px}
+.symbol-row{display:grid;grid-template-columns:56px 1fr;gap:10px 16px;align-items:baseline;margin-bottom:10px}
+.symbol-row:last-child{margin-bottom:0}
+.symbol-glyph{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--gold);text-align:center;padding-top:1px}
+.symbol-meaning{font-family:'Crimson Pro',serif;font-size:13.5px;color:var(--text-dim);line-height:1.55}
+.symbol-meaning strong{font-family:'Cormorant Garamond',serif;font-size:14px;font-style:normal;font-weight:600;color:rgba(255,255,255,.9);display:block;margin-bottom:1px}
+.formula-relation{margin-top:16px;padding:12px 16px;background:rgba(210,175,100,0.04);border-left:1px solid var(--gold-dim);font-family:'Crimson Pro',serif;font-size:13.5px;color:var(--text-dim);line-height:1.65;font-style:italic}
+
 @keyframes riseIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 ::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:transparent}
@@ -272,7 +282,15 @@ const CHAPTERS = [
     title: "Enraizamiento: la postura como ancla gravitacional",
     formula: {
       expr: "S₁ = ∫₀^∞ ρ(x) · g(x) dx",
-      desc: "La acción del sustrato S₁ es la integral de densidad presencial ρ sobre el campo gravitacional g — todo ser necesita tierra antes de cielo."
+      desc: "La acción del sustrato S₁ es la integral de densidad presencial ρ sobre el campo gravitacional g — todo ser necesita tierra antes de cielo.",
+      symbols: [
+        { glyph: "S₁",   name: "Acción del sustrato",      meaning: "El resultado total de habitar la primera dimensión. «S» viene de acción en física — la cantidad que un sistema acumula al moverse en el tiempo. El subíndice «₁» indica que pertenece a esta dimensión fundacional: antes de que cualquier otra cualidad pueda expresarse, debe existir esta." },
+        { glyph: "∫₀^∞", name: "Integral de cero a infinito", meaning: "La suma continua a lo largo de toda la extensión posible — desde el punto de contacto más inmediato (x = 0, el suelo bajo los pies) hasta el horizonte ilimitado (∞). Nos dice que el enraizamiento no es un momento puntual sino un proceso que se extiende en la totalidad del campo que habitamos." },
+        { glyph: "ρ(x)", name: "Densidad presencial",       meaning: "ρ (rho) mide cuánta presencia, cuánto «peso consciente», deposita el ser en cada punto x de su experiencia. Un cuerpo tenso y distraído tiene ρ bajo: poca presencia distribuida. Un cuerpo enraizado tiene ρ alto: cada célula participa del contacto con lo real." },
+        { glyph: "g(x)", name: "Campo gravitacional",       meaning: "La gravedad no es solo física: es la fuerza que invita constantemente al ser a rendirse hacia abajo, hacia la tierra, hacia lo concreto. g(x) representa esa llamada permanente. Resistirla genera tensión crónica; recibirla con consciencia genera sustrato." },
+        { glyph: "·",    name: "Producto — relación multiplicativa", meaning: "ρ y g no se suman: se multiplican. Si cualquiera de los dos es cero — si no hay presencia o no hay entrega a la gravedad — el resultado de la integral colapsa a cero, sin importar cuán grande sea el otro factor. Enraizarse requiere ambos simultáneamente." }
+      ],
+      relation: "La fórmula dice: el sustrato que construyes (S₁) es el resultado de integrar, en cada punto de tu existencia, cuánta presencia traes (ρ) multiplicada por cuánto te rindes al peso de lo real (g). Sin tierra no hay cielo — sin esta integral resuelta, las dimensiones superiores flotan sin ancla."
     },
     content: [
       "La primera dimensión de la teoría M es la más elemental: la extensión espacial que permite que algo ocupe un lugar. Sin Ādhāra —sustrato en sánscrito— ninguna otra dimensión tiene donde desplegarse. Es el suelo de toda existencia posible.",
@@ -298,7 +316,17 @@ const CHAPTERS = [
     title: "Movimiento: la conciencia que ondula",
     formula: {
       expr: "Ψ(x,t) = A · e^(i(kx − ωt))",
-      desc: "La función de onda Ψ describe una conciencia en movimiento: amplitud A, vector de onda k, frecuencia angular ω. Fluir es ser real."
+      desc: "La función de onda Ψ describe una conciencia en movimiento: amplitud A, vector de onda k, frecuencia angular ω. Fluir es ser real.",
+      symbols: [
+        { glyph: "Ψ(x,t)", name: "Función de onda", meaning: "Psi (Ψ) es la función que describe el estado completo de un sistema cuántico en cada punto del espacio (x) y del tiempo (t). Aquí representa la conciencia en movimiento: no una cosa fija, sino un patrón que se despliega simultáneamente en el espacio y en el tiempo. Conocer Ψ es conocer toda la información posible del ser en ese instante." },
+        { glyph: "A",      name: "Amplitud", meaning: "La altura máxima que alcanza la onda — su intensidad, su presencia. En términos del flujo interior, A es la magnitud de la vida que circula: cuán vivo, cuán encendido está el sistema. Una amplitud alta no significa agitación; significa que el flujo tiene potencia y no está amortiguado por la represión o la apatía." },
+        { glyph: "e^(…)",  name: "Exponencial compleja", meaning: "La base e elevada a un exponente complejo produce oscilaciones puras — senos y cosenos entrelazados. Es la forma matemática del movimiento ondulatorio eterno: nunca se detiene, nunca se disipa por sí solo. En el Camino, representa la naturaleza inherentemente ondulatoria de la conciencia: el ser que no fluye no desaparece — se estanca." },
+        { glyph: "i",      name: "Unidad imaginaria", meaning: "√(−1), el número que no existe en la recta real pero sin el cual la física cuántica no puede escribirse. Aquí señala que el flujo de la conciencia ocurre en una dimensión que la mente ordinaria no puede medir directamente — se percibe en sus efectos (movimiento, emoción, cambio), no en su sustancia." },
+        { glyph: "k",      name: "Vector de onda", meaning: "Determina cuántos ciclos completa la onda por unidad de espacio — su densidad espacial. En términos del flujo interior, k es la textura del movimiento: fino o grueso, sutil o visible. Un k alto indica un ser que vibra con mucha frecuencia en poco espacio; un k bajo, un ser cuyas ondas son largas y amplias." },
+        { glyph: "ω",      name: "Frecuencia angular", meaning: "Omega (ω) mide cuántos ciclos completa la onda por unidad de tiempo — su ritmo temporal. Es la velocidad del flujo: cuán rápido late la conciencia. No hay una ω correcta: hay una ω propia. La práctica de Pravāha es encontrar y sostener la frecuencia que le pertenece a cada ser, sin imitar ni resistir el ritmo ajeno." },
+        { glyph: "kx − ωt", name: "Fase — posición en el ciclo", meaning: "La diferencia entre la componente espacial (kx) y la temporal (ωt) determina en qué punto del ciclo se encuentra la onda en cada instante. Es el momento de la respiración: ¿estás en inhalación o exhalación? ¿en apertura o en cierre? La fase no es un error — es la ubicación exacta dentro del flujo." }
+      ],
+      relation: "La fórmula dice: la conciencia (Ψ) en cualquier punto del espacio y del tiempo es siempre una onda — nunca una partícula detenida. Su intensidad (A) puede variar, su textura (k) y ritmo (ω) son propios de cada ser, pero la forma fundamental es siempre movimiento. Resistir Pravāha no detiene la onda: la deforma. La práctica es aprender a ondular con la propia frecuencia."
     },
     content: [
       "La segunda dimensión introduce el movimiento: la posibilidad de que algo se desplace a lo largo de la primera. Pravāha —flujo en sánscrito— es la dimensión donde la vida se distingue de la piedra. Todo sistema vivo fluye; todo sistema muerto se detiene.",
@@ -324,7 +352,16 @@ const CHAPTERS = [
     title: "Apertura: el cuerpo como espacio sagrado",
     formula: {
       expr: "V = (4/3)π r³ · e^(−λt)",
-      desc: "El volumen interior V del ser expande cúbicamente con el radio de apertura r y decae con la constricción λ acumulada en el tiempo t."
+      desc: "El volumen interior V del ser expande cúbicamente con el radio de apertura r y decae con la constricción λ acumulada en el tiempo t.",
+      symbols: [
+        { glyph: "V",       name: "Volumen interior", meaning: "El espacio interno disponible para la conciencia: no el volumen físico del cuerpo, sino la amplitud del campo de presencia que el ser puede sostener. Un V alto indica una mente capaz de contener experiencias complejas sin contraerse; un V bajo, un interior comprimido donde la experiencia desborda los bordes y produce ansiedad." },
+        { glyph: "(4/3)πr³", name: "Volumen de la esfera", meaning: "La fórmula del volumen de una esfera perfecta. La esfera es la forma que maximiza volumen interior con la menor superficie posible — la geometría más eficiente del espacio. Aquí simboliza que la apertura interior crece en todas las direcciones simultáneamente: no se abre solo hacia adelante o hacia arriba, sino en la totalidad del campo." },
+        { glyph: "r",       name: "Radio de apertura", meaning: "La distancia desde el centro del ser hasta su membrana — cuán lejos se atreve a extenderse la conciencia. El radio no es fijo: se contrae bajo amenaza y se expande en seguridad. La práctica de Vyoman es la práctica de ampliar r deliberadamente, sin esperar a que las condiciones externas lo permitan. Y dado que V crece con r³, pequeños aumentos del radio producen enormes aumentos de volumen." },
+        { glyph: "e^(−λt)", name: "Factor de decaimiento exponencial", meaning: "La función que describe cómo algo disminuye con el tiempo bajo una presión acumulada. Aquí representa el efecto de la constricción crónica: cada unidad de tiempo vivida en contracción (estrés, alerta, represión) reduce el volumen disponible de forma exponencial — no lineal. El daño se acelera. Por eso la práctica no puede postergarse indefinidamente." },
+        { glyph: "λ",       name: "Constante de constricción", meaning: "Lambda (λ) mide la velocidad a la que la constricción acumulada consume el espacio interior. Un λ alto indica un sistema que se comprime rápido bajo presión — alta reactividad, bajo umbral. Un λ bajo indica resiliencia: el espacio interior se recupera antes de colapsar. La práctica reduce λ con el tiempo, haciendo al ser más elástico frente a la contracción." },
+        { glyph: "t",       name: "Tiempo acumulado", meaning: "El tiempo durante el cual el sistema ha operado bajo constricción. No es el tiempo cronológico sino el tiempo de exposición a la contracción sin recuperación. A mayor t sin práctica de apertura, mayor el efecto de e^(−λt) — el espacio interior se achica incluso si las condiciones externas no empeoran." }
+      ],
+      relation: "La fórmula dice: el espacio interior (V) crece cúbicamente con cada pequeño gesto de apertura (r³) — el efecto es enorme con poco esfuerzo —, pero ese espacio es erosionado de forma exponencial por la constricción acumulada (e^(−λt)). La práctica de Vyoman no es abrirse de golpe: es reducir λ y aumentar r con constancia, para que el volumen disponible crezca más rápido de lo que la vida lo comprime."
     },
     content: [
       "Vyoman significa espacio, éter, cielo abierto. Es la tercera dimensión —profundidad— y con ella emerge el volumen: la posibilidad de que algo tenga interior. Sin Vyoman, el universo sería una superficie sin dentro.",
@@ -350,7 +387,15 @@ const CHAPTERS = [
     title: "Impermanencia: habitar el instante sin poseerlo",
     formula: {
       expr: "Δt · ΔE ≥ ℏ/2",
-      desc: "La relación de incertidumbre tiempo-energía: no es posible conocer con precisión simultánea la duración y la energía de un estado. El instante perfecto no existe; existe el instante presente."
+      desc: "La relación de incertidumbre tiempo-energía: no es posible conocer con precisión simultánea la duración y la energía de un estado. El instante perfecto no existe; existe el instante presente.",
+      symbols: [
+        { glyph: "Δt",   name: "Incertidumbre en el tiempo", meaning: "Delta-t mide el grado de indefinición sobre cuánto dura un estado cuántico — su extensión temporal. Cuanto más breve e irrepetible es un momento, mayor es Δt: no puede delimitarse con precisión. En el Camino, Δt es el recordatorio de que el instante no puede ser capturado ni detenido; intentar poseerlo es perderlo. La impermanencia no es un defecto de la realidad — es su naturaleza fundamental." },
+        { glyph: "ΔE",   name: "Incertidumbre en la energía", meaning: "Delta-E mide la indefinición en el contenido energético de ese mismo estado. Un momento de alta intensidad emocional o vital tiene una energía mal definida: no se puede saber exactamente cuánto pesa, cuánto dura, ni cuándo terminará. La mente que exige precisar la energía de cada instante — categorizarlo, etiquetarlo, controlarlo — viola este principio y genera sufrimiento." },
+        { glyph: "≥",    name: "Desigualdad — límite inferior", meaning: "El producto Δt · ΔE no puede ser menor que ℏ/2. Es un límite que no impone la torpeza del observador sino la naturaleza misma de la realidad. Nunca se conocerá simultáneamente con precisión perfecta la duración y la energía de un instante. Esta no es una limitación técnica: es una invitación a soltar la exigencia de control total sobre la experiencia." },
+        { glyph: "ℏ",    name: "Constante de Planck reducida", meaning: "H-barra (ℏ = h/2π) es la unidad mínima de acción del universo — la granularidad fundamental de la realidad. Su valor es extremadamente pequeño (~1.05 × 10⁻³⁴ J·s), lo que significa que en la escala humana la incertidumbre es imperceptible físicamente. Pero su presencia en la fórmula garantiza que ningún sistema, por perfecto que sea, escapa a la indefinición. En el Camino, ℏ es el umbral bajo el cual la realidad deja de ser predecible." },
+        { glyph: "½",    name: "Factor de proporcionalidad", meaning: "El límite mínimo no es ℏ sino ℏ/2 — la mitad. Este factor, derivado riguroso de la mecánica cuántica, indica que la incertidumbre está distribuida entre los dos términos: ninguno absorbe toda la indefinición. El tiempo y la energía comparten la carga de lo incierto. En el Camino: ni el cuándo ni el cuánto pueden controlarse plenamente; ambos son parcialmente libres." }
+      ],
+      relation: "La fórmula dice: cuanto más se intenta precisar la duración de un instante (reducir Δt), más imprecisa se vuelve su energía (ΔE aumenta), y viceversa. El instante perfecto — completamente definido en tiempo y energía — es imposible por ley física. Kāla enseña exactamente eso: no se trata de capturar el momento sino de habitarlo. La práctica no es precisión; es presencia con lo indefinido."
     },
     content: [
       "Kāla es tiempo, pero también es muerte en sánscrito. La cuarta dimensión —el tiempo— es inseparable de la impermanencia. Todo lo que existe en las tres dimensiones espaciales está condenado a cambiar. Esta es la verdad más resistida por la mente humana y la más liberadora cuando se integra en el cuerpo.",
@@ -376,7 +421,16 @@ const CHAPTERS = [
     title: "Superposición: ser todo antes de ser algo",
     formula: {
       expr: "|Ψ⟩ = α|0⟩ + β|1⟩,  |α|² + |β|² = 1",
-      desc: "El estado cuántico Ψ es superposición de todos los estados posibles. La normalización garantiza que la suma de probabilidades es 1: toda posibilidad existe, pero solo una colapsa."
+      desc: "El estado cuántico Ψ es superposición de todos los estados posibles. La normalización garantiza que la suma de probabilidades es 1: toda posibilidad existe, pero solo una colapsa.",
+      symbols: [
+        { glyph: "|Ψ⟩",    name: "Estado cuántico (ket)", meaning: "La notación |Ψ⟩ — llamada 'ket' en la notación de Dirac — representa el estado completo de un sistema cuántico. Los corchetes angulares indican que no es un número ni un vector ordinario: es un objeto que vive en un espacio de posibilidades. Aquí Ψ no describe lo que el ser es, sino todo lo que el ser podría ser simultáneamente." },
+        { glyph: "α|0⟩",   name: "Componente del primer estado", meaning: "El estado base |0⟩ es una de las dos posibilidades fundamentales — en computación cuántica, el bit apagado; en el Camino, una forma de ser. α (alfa) es la amplitud de probabilidad de ese estado: un número complejo cuyo módulo al cuadrado (|α|²) da la probabilidad de que, al observar, ese estado colapse como realidad." },
+        { glyph: "β|1⟩",   name: "Componente del segundo estado", meaning: "El estado |1⟩ es la otra posibilidad fundamental — el bit encendido; otra forma de ser. β (beta) es su amplitud de probabilidad. Mientras el sistema no es observado, ambas componentes coexisten. Ni α ni β por sí solos son la realidad: la realidad es la superposición, la riqueza de ambos simultáneos." },
+        { glyph: "|α|² + |β|² = 1", name: "Condición de normalización", meaning: "Esta ecuación garantiza que las probabilidades suman exactamente 1 — es decir, algo tiene que ocurrir. El sistema debe colapsar en algún estado al ser observado; no puede desaparecer ni crear nueva probabilidad. En el Camino, es el recordatorio de que la superposición no es infinita fantasía: es la totalidad finita y consistente de lo que puede ser." },
+        { glyph: "|α|²",   name: "Probabilidad del primer estado", meaning: "El módulo al cuadrado de alfa. No es α directamente — las amplitudes pueden ser números imaginarios — sino su magnitud cuadrada, que ya es un número real entre 0 y 1. Esta probabilidad no dice qué estado será: solo dice cuán probable es. La observación decide, no la fórmula." },
+        { glyph: "|β|²",   name: "Probabilidad del segundo estado", meaning: "El módulo al cuadrado de beta. Junto con |α|², suman 1. Si |α|² = 0.9, el sistema tiene 90% de probabilidad de colapsar en |0⟩ y 10% en |1⟩. Pero hasta que ocurre la observación, el estado real es la superposición completa — la suma de ambos ponderada por sus amplitudes." }
+      ],
+      relation: "La fórmula dice: antes de cualquier observación, el ser no es uno ni otro — es la suma ponderada de todos sus estados posibles. Māyā es exactamente eso: no ilusión sino plenitud potencial. La normalización impone honestidad: la posibilidad no es infinita, tiene forma y límite. La práctica es aprender a habitar esa superposición sin ansiedad, sin colapsar prematuramente por miedo a la indeterminación."
     },
     content: [
       "Māyā no significa ilusión en su sentido moderno —engaño o falsedad— sino poder creativo: la capacidad del campo primordial de desplegarse en infinitas formas sin agotar su fuente. La quinta dimensión de la teoría M es precisamente esto: la dimensión que alberga los mundos posibles no actualizados, las líneas de universo que no fueron tomadas.",
@@ -633,11 +687,22 @@ function renderChapter() {
   // Formula
   const fBox = document.getElementById('ch-formula');
   if (ch.formula) {
+    const symbolsHTML = ch.formula.symbols ? `
+      <div class="formula-symbols">
+        <div class="formula-symbols-label">Guía de símbolos</div>
+        ${ch.formula.symbols.map(s => `
+          <div class="symbol-row">
+            <div class="symbol-glyph">${s.glyph}</div>
+            <div class="symbol-meaning"><strong>${s.name}</strong>${s.meaning}</div>
+          </div>`).join('')}
+        ${ch.formula.relation ? `<div class="formula-relation">${ch.formula.relation}</div>` : ''}
+      </div>` : '';
     fBox.innerHTML = `
       <div class="formula-box">
         <div class="formula-label">Fórmula de la dimensión</div>
         <div class="formula-expr">${ch.formula.expr}</div>
         <div class="formula-desc">${ch.formula.desc}</div>
+        ${symbolsHTML}
       </div>`;
   } else { fBox.innerHTML = ''; }
 
